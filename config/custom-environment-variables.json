@@ -1,0 +1,4 @@
+{
+  "jwtPrivateKey": "vcaixa_jwtPrivateKey",
+  "db": "MONGO_URI"
+}
