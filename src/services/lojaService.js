@@ -1,7 +1,7 @@
-const Joi = require('joi');
+const Joi = require('joi')
 const bcrypt = require('bcrypt')
+const winston = require('winston')
 const _ = require('lodash')
-const moment = require('moment')
 const { Loja, validateLoja } = require('../models/lojas')
 const { Categoria, validateCategoria } = require('../models/categorias')
 const { Caixa, validateCaixa } = require('../models/caixas')
@@ -41,7 +41,7 @@ const authUser = async (req, res) => {
   const { error } = validateAuth(req.body)
   if (error) return res.status(400).json({ message: error.details[0].message })
 
-  let loja = await Loja.findOne({ email: req.body.email })
+  const loja = await Loja.findOne({ email: req.body.email })
   if (!loja) return res.status(400).json({ message: 'Email ou Senha inválidos' })
 
   const validPassword = await bcrypt.compare(req.body.senha, loja.senha)
@@ -116,7 +116,7 @@ const createMovimento = async (req, res) => {
 
   let { categoriaId, tipo, valor, descricao } = req.body
 
-  tipo === 'Entrada' ? valor = (valor) : valor = (valor * -1)
+  valor = tipo === 'Entrada' ? valor : (valor * -1)
 
   const categoria = await Categoria.findById({ _id: categoriaId })
   if (!categoria) return res.status(400).json({ message: 'Categoria inválida' })

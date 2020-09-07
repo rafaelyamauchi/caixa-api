@@ -1,5 +1,5 @@
-const winston = require('winston');
-const config = require('config');
+const winston = require('winston')
+const config = require('config')
 require('winston-mongodb')
 
 module.exports = function () {
@@ -9,15 +9,17 @@ module.exports = function () {
       {
         filename: 'uncaugthExceptions.log',
         level: 'info'
-      }));
+      }))
 
   process.on('unhandledRejection', (ex) => {
-    throw ex;
-  });
+    throw ex
+  })
 
-  new winston.transports.File({ filename: 'logfile.log' });
-  new winston.transports.MongoDB({
-    db: config.get('db'),
-    level: 'info'
-  });
+  winston.exceptions.handle(
+    new winston.transports.File({ filename: 'logfile.log' }),
+    new winston.transports.MongoDB({
+      db: config.get('db'),
+      level: 'info'
+    })
+  )
 }

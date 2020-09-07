@@ -16,7 +16,7 @@ schemaCaixa.index({ loja: 1 }, { unique: true })
 
 const Caixa = mongoose.model('Caixa', schemaCaixa)
 
-function validateCaixa(caixa) {
+function validateCaixa (caixa) {
   const schema = Joi.object({
     saldoTotal: Joi.number().min(0).required()
   })

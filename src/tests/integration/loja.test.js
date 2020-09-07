@@ -51,7 +51,7 @@ describe('/api/lojas', () => {
     })
 
     it('Deve retornar loja se for uma loja valida', async () => {
-      const res = await exec()
+      await exec()
       const loja = await Loja.find({ email })
       expect(loja).not.toBeNull()
     })

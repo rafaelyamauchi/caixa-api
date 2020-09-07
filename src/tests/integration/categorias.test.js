@@ -33,7 +33,7 @@ describe('/api/categorias', () => {
     })
 
     it('Deve retornar 400 se a categoria for menor que 5 caracteres', async () => {
-      nome = '1234';
+      nome = '1234'
       const res = await exec()
       expect(res.status).toBe(400)
     })

@@ -34,7 +34,7 @@ const schemaMovimento = new mongoose.Schema({
 
 const Movimento = mongoose.model('Movimento', schemaMovimento)
 
-function validateMovimento(movimento) {
+function validateMovimento (movimento) {
   const schema = Joi.object({
     data: Joi.date(),
     categoriaId: Joi.objectId().required(),

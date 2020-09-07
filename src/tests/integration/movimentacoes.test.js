@@ -19,8 +19,8 @@ describe('/api/caixa/movimentos', () => {
     let token
     let categoria
     let caixa
-    let categoriaId
     let caixaId
+    let categoriaId
     let saldoTotal
     let tipo
     let valor
@@ -47,7 +47,6 @@ describe('/api/caixa/movimentos', () => {
       tipo = 'Entrada'
       valor = 10
       descricao = '1234567891'
-
 
       await execCategoria()
       categoria = await Categoria.findOne({ nome: 'Categoria1' })

@@ -20,6 +20,7 @@ describe('/api/caixadev/caixas', () => {
     let categoriaId
     let categoria
     let caixa
+    let caixaId
     let movimentacoes
     let tipo
     let valor
@@ -104,7 +105,7 @@ describe('/api/caixadev/caixas', () => {
     })
 
     it('Deve retornar 400 se valor do saldo inicial for negativo', async () => {
-      saldoTotal = -1;
+      saldoTotal = -1
       const res = await exec()
       expect(res.status).toBe(400)
     })

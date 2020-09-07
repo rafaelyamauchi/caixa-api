@@ -1,4 +1,4 @@
-const auth = require('../middleware/auth');
+const auth = require('../middleware/auth')
 const { createMovimento } = require('../services/lojaService')
 
 const router = app => {
