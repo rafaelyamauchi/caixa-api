@@ -13,7 +13,7 @@ describe('auth middleware', () => {
 
   const exec = async () => {
     return await request(server)
-      .post('/api/caixadev/categorias')
+      .post('/api/categorias')
       .set('x-auth-token', token)
       .send({ nome: 'Categoria1' })
   }

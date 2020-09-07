@@ -1,7 +1,7 @@
 const { createLoja } = require('../services/lojaService')
 
 const router = app => {
-  app.post('/api/caixadev/lojas', createLoja)
+  app.post('/api/lojas', createLoja)
 }
 
 module.exports = router

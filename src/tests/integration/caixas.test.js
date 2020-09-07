@@ -27,7 +27,7 @@ describe('/api/caixadev/caixas', () => {
 
     const exec = async () => {
       return await request(server)
-        .get('/api/caixadev/caixas')
+        .get('/api/caixas')
         .set('x-auth-token', token)
     }
 
@@ -52,7 +52,7 @@ describe('/api/caixadev/caixas', () => {
 
     it('Deve retornar 200 se não foi criado nenhum caixa', async () => {
       await request(server)
-        .post('/api/caixadev/categorias')
+        .post('/api/categorias')
         .set('x-auth-token', token)
         .send({ nome: 'Categoria1' })
 
@@ -76,7 +76,7 @@ describe('/api/caixadev/caixas', () => {
 
       await movimentacoes.save()
 
-      const res = await request(server).get('/api/caixadev/caixas').set('x-auth-token', token)
+      const res = await request(server).get('/api/caixas').set('x-auth-token', token)
       expect(res.status).toBe(200)
     })
   })
@@ -87,7 +87,7 @@ describe('/api/caixadev/caixas', () => {
 
     const exec = async () => {
       return await request(server)
-        .post('/api/caixadev/caixas')
+        .post('/api/caixas')
         .set('x-auth-token', token)
         .send({ saldoTotal })
     }

@@ -6,7 +6,7 @@ const { Movimento } = require('../../models/movimentacoes')
 const mongoose = require('mongoose')
 let server
 
-describe('/api/caixadev/caixa/movimentos', () => {
+describe('/api/caixa/movimentos', () => {
   beforeEach(() => { server = require('../../server/index') })
   afterEach(async () => {
     await server.close()
@@ -28,14 +28,14 @@ describe('/api/caixadev/caixa/movimentos', () => {
 
     const exec = async () => {
       return await request(server)
-        .post('/api/caixadev/caixa/movimentos')
+        .post('/api/caixa/movimentos')
         .set('x-auth-token', token)
         .send({ categoriaId, tipo, valor, descricao })
     }
 
     const execCategoria = async () => {
       return await request(server)
-        .post('/api/caixadev/categorias')
+        .post('/api/categorias')
         .set('x-auth-token', token)
         .send({ nome: 'Categoria1' })
     }

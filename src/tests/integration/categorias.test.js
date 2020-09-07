@@ -3,7 +3,7 @@ const { Loja } = require('../../models/lojas')
 const { Categoria } = require('../../models/categorias')
 let server
 
-describe('/api/caixadev/categorias', () => {
+describe('/api/categorias', () => {
   beforeEach(() => { server = require('../../server/index') })
   afterEach(async () => {
     await server.close()
@@ -16,7 +16,7 @@ describe('/api/caixadev/categorias', () => {
 
     const exec = async () => {
       return await request(server)
-        .post('/api/caixadev/categorias')
+        .post('/api/categorias')
         .set('x-auth-token', token)
         .send({ nome })
     }

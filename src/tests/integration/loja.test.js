@@ -1,10 +1,8 @@
 const request = require('supertest')
 const { Loja } = require('../../models/lojas')
-const { iteratee } = require('lodash')
-const { expectCt } = require('helmet')
 let server
 
-describe('/api/caixadev/lojas', () => {
+describe('/api/lojas', () => {
   beforeEach(() => { server = require('../../server/index') })
   afterEach(async () => {
     await server.close()
@@ -18,7 +16,7 @@ describe('/api/caixadev/lojas', () => {
 
     const exec = async () => {
       return await request(server)
-        .post('/api/caixadev/lojas')
+        .post('/api/lojas')
         .send({ nome, email, senha })
     }
 
