@@ -34,6 +34,8 @@ npm test
 
 npm start
 
+abra o browser http://localhost:3000
+
 # Uso da API & Endpoints
 
 ## Registrar uma loja [POST /api/lojas]
