@@ -170,7 +170,7 @@ npm start
 - Request: Resumo com a movimentação do caixa
 
   - Headers
-        x-auth-token: YOURJWT
+        x-auth-token: JWT
 
 - Response: 200 (application/json)
 
@@ -197,11 +197,6 @@ npm start
 
 Se você olhar na pasta config/default.json, irá ver uma propriedade jwtPrivateKey. Esta key essa chave é usada para encryptar JSON web tokens. Para produção, você deve armazenar a chave como uma variável de ambiente.
 
-## Produção
-
-O projeto pode ser colocado em produção no heroku, seguindo as intruções no site.
-
-[Heroku](https://www.heroku.com/#)
 
 ## Construido com
 
